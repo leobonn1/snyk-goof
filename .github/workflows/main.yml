@@ -2,8 +2,8 @@ name: DevSecOps
 on: push
 
 jobs:
-  security:
-    name: snyk
+  snyk:
+    name: SNYK
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
