@@ -2,7 +2,7 @@ name: DevSecOps
 on: push
 
 jobs:
-  security:
+  snyk:
     name: SNYK
     runs-on: ubuntu-latest
     steps:
@@ -13,6 +13,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   sonarcloud:
     name: SonarCloud
+    needs: snyk
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
